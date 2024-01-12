@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from "@mui/material";
-import { AgeRangeFilter, CountryFilter, DateFilter } from "./filters";
+import { AgeRangeFilter, DateFilter, StateFilter } from "./filters";
 import { Filter } from "@sisense/sdk-data";
 
 interface FilterLibraryProps {
@@ -33,10 +33,10 @@ const FilterLibrary: React.FC<FilterLibraryProps> = ({ filters, onSelectFilters,
 
   const renderFilterComponent = (filterType: string): JSX.Element => {
     switch (filterType.toLowerCase()) {
-      case "countryfilter":
+      case "stateFilter":
         return (
-          <CountryFilter
-            title="Country Filter"
+          <StateFilter
+            title="State Filter"
             onChange={(newFilter: Filter) => handleFilterChange(newFilter)}
           />
         );

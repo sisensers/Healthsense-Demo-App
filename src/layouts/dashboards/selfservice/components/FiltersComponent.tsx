@@ -2,7 +2,7 @@ import React from "react";
 import { Filter } from "@sisense/sdk-data";
 import { Button, Card, CardContent, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { CountryFilter, DateFilter, AgeRangeFilter } from "./filters";
+import { StateFilter, DateFilter, AgeRangeFilter } from "./filters";
 import * as DM from "sisense/Schemas/ecommerce-master";
 
 interface FiltersComponentProps {
@@ -35,12 +35,9 @@ const renderFilterComponent = (
   onChange: (index: number, newFilter: Filter | null) => void
 ): JSX.Element => {
   switch (type.toLowerCase()) {
-    case "countryfilter":
+    case "countryFilter":
       return (
-        <CountryFilter
-          title="Country Filter"
-          onChange={(newFilter) => onChange(index, newFilter)}
-        />
+        <StateFilter title="Country Filter" onChange={(newFilter) => onChange(index, newFilter)} />
       );
     case "datefilter":
       return (

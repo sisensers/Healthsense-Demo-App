@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ExecuteQuery, MemberFilterTile, ThemeProvider } from "@sisense/sdk-ui";
 import { Data, Filter } from "@sisense/sdk-data";
-import * as DM from "sisense/Schemas/ecommerce-master";
+import * as DM from "sisense/Schemas/healthsense-master";
 
 const theme = {
   chart: {
@@ -22,7 +22,7 @@ const theme = {
 interface CommonFilterProps {
   title: string;
   onChange: (newFilter: Filter | null) => void;
-  attribute: any; // Adjust the type accordingly
+  attribute: any;
 }
 
 const CommonFilter: React.FC<CommonFilterProps> = ({ title, onChange, attribute }) => {
@@ -48,13 +48,13 @@ const CommonFilter: React.FC<CommonFilterProps> = ({ title, onChange, attribute 
   );
 };
 
-interface CountryFilterProps {
+interface StateFilterProps {
   title: string;
   onChange: (newFilter: Filter | null) => void;
 }
 
-const CountryFilter: React.FC<CountryFilterProps> = ({ title, onChange }) => (
-  <CommonFilter title={title} onChange={onChange} attribute={DM.Commerce.Country} />
+const StateFilter: React.FC<StateFilterProps> = ({ title, onChange }) => (
+  <CommonFilter title={title} onChange={onChange} attribute={DM.Healthsense.State} />
 );
 
 interface DateFilterProps {
@@ -63,7 +63,7 @@ interface DateFilterProps {
 }
 
 const DateFilter: React.FC<DateFilterProps> = ({ title, onChange }) => (
-  <CommonFilter title={title} onChange={onChange} attribute={DM.Commerce.Transaction_Date.Months} />
+  <CommonFilter title={title} onChange={onChange} attribute={DM.Healthsense.VisitDate.Months} />
 );
 
 interface AgeRangeFilterProps {
@@ -72,7 +72,7 @@ interface AgeRangeFilterProps {
 }
 
 const AgeRangeFilter: React.FC<AgeRangeFilterProps> = ({ title, onChange }) => (
-  <CommonFilter title={title} onChange={onChange} attribute={DM.Commerce.AgeRange} />
+  <CommonFilter title={title} onChange={onChange} attribute={DM.Healthsense.AgeRange} />
 );
 
-export { CountryFilter, DateFilter, AgeRangeFilter };
+export { StateFilter, DateFilter, AgeRangeFilter };
