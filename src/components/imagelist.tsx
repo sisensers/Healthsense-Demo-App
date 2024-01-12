@@ -5,12 +5,12 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
-import image1 from "assets/images/products/NikeAirForce1Sneakers.png";
-import image2 from "assets/images/products/NikeFreeRNFlyknitRunningShoes.png";
-import image6 from "assets/images/products/VersaceMedusaHeadHighTopSneakers.png";
-import image7 from "assets/images/products/UnderArmourCrossTrainingShoes.png";
-import image4 from "assets/images/ecommerce/VersaceMedusaHeadHighTopSneakers.png";
-import image5 from "assets/images/ecommerce/adidas-hoodie.jpeg";
+import image1 from "assets/images/BetterHealth.png";
+import image2 from "assets/images/BetterAssistance.png";
+import image6 from "assets/images/HappyHealth.png";
+import image7 from "assets/images/DeerMountain.png";
+import image4 from "assets/images/FirstCare.png";
+import image5 from "assets/images/CaveCreek.png";
 
 export default function TitlebarImageList() {
   return (
@@ -36,38 +36,38 @@ export default function TitlebarImageList() {
 const itemData = [
   {
     img: image1,
-    title: "Nike Air Force 1 Sneakers",
-    author: "$99",
+    title: "Better Health",
+    author: "California",
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
     img: image2,
-    title: "Nike Free Fit Running Shoes",
-    author: "$120",
+    title: "Better Assistance",
+    author: "Texas",
   },
   {
     img: image6,
-    title: "Versace Medusa Head High",
-    author: "$200",
+    title: "Happy Health",
+    author: "Texas",
   },
   {
     img: image7,
-    title: "Under Armor Training Shoes",
-    author: "$115",
+    title: "Deer Mountain",
+    author: "Colorado",
     cols: 2,
   },
   {
     img: image4,
-    title: "Versace Shoes",
-    author: "$135",
+    title: "First Care",
+    author: "California",
     cols: 2,
   },
   {
     img: image5,
-    title: "Adidas Hoodie",
-    author: "$225",
+    title: "Cave Creek",
+    author: "Arizona",
     rows: 2,
     cols: 2,
     featured: true,

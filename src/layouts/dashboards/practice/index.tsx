@@ -17,7 +17,7 @@ import dataTableData from "layouts/pages-sisense/product-page/data/dataTableData
 // Sisense Components
 import TitlebarImageList from "components/imagelist";
 
-function SisenseProductPage(): JSX.Element {
+function Practice(): JSX.Element {
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -46,4 +46,4 @@ function SisenseProductPage(): JSX.Element {
   );
 }
 
-export default SisenseProductPage;
+export default Practice;

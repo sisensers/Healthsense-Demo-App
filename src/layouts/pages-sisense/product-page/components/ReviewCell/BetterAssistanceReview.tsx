@@ -21,7 +21,7 @@ import { styled } from "@mui/material/styles";
 // Material Dashboard 2 PRO React TS components
 import MDTypography from "components/MDTypography";
 
-function ReviewCell({ rating }: { rating: number }): JSX.Element {
+function BetterAssistanceReview({ rating }: { rating: number }): JSX.Element {
   const ratings: any = {
     0.5: [
       <Icon key={1}>star_outline</Icon>,
@@ -109,8 +109,8 @@ function ReviewCell({ rating }: { rating: number }): JSX.Element {
     <CustomWidthTooltip
       title={
         <MDTypography color="white" variant="h5" fontWeight="medium">
-          The overall Average Wait Time for Better Health increased by 0.1 (0.09%) from 100.4 to
-          100.5 between January 12, 2024 and January 14, 2024.
+          Between January 12, 2024 and January 14, 2024, overall Average Wait Time for Better
+          Assistance Medical Group decreased from 50 minutes to 45 minutes.
         </MDTypography>
       }
       followCursor
@@ -122,4 +122,4 @@ function ReviewCell({ rating }: { rating: number }): JSX.Element {
   );
 }
 
-export default ReviewCell;
+export default BetterAssistanceReview;
