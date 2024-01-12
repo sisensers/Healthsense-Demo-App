@@ -1,8 +1,8 @@
 import React from "react";
 import GradientLineChart from "sisense/Charts/LineCharts/GradientLineChart";
 import { ExecuteQuery } from "@sisense/sdk-ui";
-import * as DM from "sisense/Schemas/ecommerce-master";
-import { Data, measures, Filter } from "@sisense/sdk-data";
+import * as DM from "sisense/Schemas/healthsense-master";
+import { Data, measures, Filter, filters } from "@sisense/sdk-data";
 
 const colorList = ["info", "dark", "primary", "secondary", "success", "error", "light"];
 
@@ -29,12 +29,19 @@ export default function SalesByAgeLine(props: Props): JSX.Element {
   return (
     <ExecuteQuery
       dataSource={DM.DataSource}
-      dimensions={[DM.Commerce.Transaction_Date.Months, DM.Commerce.Status]}
-      measures={[
-        measures.count(DM.Commerce.Status, "Total Revenue"),
-        measures.sum(DM.Commerce.Cost, "Total Cost"),
+      dimensions={[DM.Healthsense.VisitDate.Months, DM.Healthsense.State]}
+      measures={[measures.sum(DM.Healthsense.InsuranceReimbursedAmount, "Total Revenue")]}
+      filters={[
+        props.filters,
+        filters.members(DM.Healthsense.PracticeName, [
+          "Better Health",
+          "First Care",
+          "Better Assistance Medical Group",
+          "Cave Creek Care Clinic",
+          "Deer Mountain Health Clinic",
+          "Happy Health Care Clinic",
+        ]),
       ]}
-      filters={[props.filters]}
     >
       {(data: Data) => {
         console.log(data);
@@ -42,8 +49,8 @@ export default function SalesByAgeLine(props: Props): JSX.Element {
         return (
           <GradientLineChart
             icon={{ component: "show_chart" }}
-            title="Orders By Status"
-            description="Number of rrders marked Paid, Refunded, or Cancelled over time"
+            title="Collected Insurance Reimbursments"
+            description="Collected Insurance Reimbursements Over Time By State"
             chart={translatedGradientData}
           />
         );

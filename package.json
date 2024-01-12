@@ -25,6 +25,7 @@
     "@nivo/line": "^0.83.0",
     "@nivo/radial-bar": "^0.83.0",
     "@react-jvectormap/core": "1.0.4",
+    "@react-jvectormap/unitedstates": "^1.0.1",
     "@react-jvectormap/world": "1.1.2",
     "@sisense/sdk-data": "^0.11.3",
     "@sisense/sdk-ui": "^0.11.3",

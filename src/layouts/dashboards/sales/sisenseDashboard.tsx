@@ -96,8 +96,6 @@ const SisenseDashboard: React.FC<SisenseDashboardProps> = ({
 
   function openSimplyAsk() {
     console.log("Opening Simply Ask");
-
-    // Open Simply Ask
     sisenseFrame.dashboard.openSimplyAsk();
   }
 

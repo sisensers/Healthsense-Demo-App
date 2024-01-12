@@ -52,7 +52,7 @@ export default function BasicPopover() {
             <ProductCell image={blackChair} name="Columbia Shoes" />
           </MDBox>
           <MDBox mb={1}>
-            <DayOfWeek />
+            <DayOfWeek filters={undefined} />
           </MDBox>
         </MDBox>
       </Popover>

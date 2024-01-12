@@ -31,7 +31,7 @@ function TooltipContent() {
           <ProductCell image={blackChair} name="Columbia Shoes" />
         </MDBox>
         <MDBox mb={1}>
-          <DayOfWeek />
+          <DayOfWeek filters={undefined} />
         </MDBox>
       </MDBox>
       <HoverTooltip tooltipContent={tooltipContent}>

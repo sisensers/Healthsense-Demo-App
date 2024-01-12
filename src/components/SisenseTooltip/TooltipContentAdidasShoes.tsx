@@ -31,7 +31,7 @@ function TooltipContentAdidasShoes() {
           <ProductCell image={chairWood} name="Adidas Shoes" />
         </MDBox>
         <MDBox mb={1}>
-          <DayOfWeek />
+          <DayOfWeek filters={undefined} />
         </MDBox>
       </MDBox>
       <HoverTooltipAdidasShoes tooltipContentadidasshoes={tooltipContentadidasshoes}>

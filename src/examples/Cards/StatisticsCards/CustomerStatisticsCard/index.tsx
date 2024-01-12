@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { ExecuteQuery } from "@sisense/sdk-ui";
-import * as DM from "sisense/Schemas/ecommerce-master";
-import { Data, measures, Filter, Cell } from "@sisense/sdk-data";
+import * as DM from "sisense/Schemas/healthsense-master";
+import { Data, measures, Filter, Cell, filters } from "@sisense/sdk-data";
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
@@ -60,7 +60,7 @@ function CustomerStatisticsCard({ color, title, icon, percentage, filters }: Pro
           <ExecuteQuery
             dataSource={DM.DataSource}
             dimensions={[]}
-            measures={[measures.count(DM.Commerce.Customer_ID, "Total")]}
+            measures={[measures.count(DM.Healthsense.InsuranceReimbursedAmount, "Total")]}
             filters={[filters]}
           >
             {(data: Data) => {

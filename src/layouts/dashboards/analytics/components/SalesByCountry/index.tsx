@@ -1,6 +1,6 @@
 import React from "react";
 import { VectorMap } from "@react-jvectormap/core";
-import { worldMerc } from "@react-jvectormap/world";
+import { usMerc } from "@react-jvectormap/unitedstates";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
@@ -8,12 +8,9 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import SalesTable from "examples/Tables/SalesTable";
 import { ExecuteQuery } from "@sisense/sdk-ui";
-import * as DM from "sisense/Schemas/ecommerce-master";
+import * as DM from "sisense/Schemas/healthsense-master";
 import { Data, measures, filters, Filter } from "@sisense/sdk-data";
 import US from "assets/images/icons/flags/US.png";
-import DE from "assets/images/icons/flags/DE.png";
-import GB from "assets/images/icons/flags/GB.png";
-import BR from "assets/images/icons/flags/BR.png";
 
 type Props = {
   filters: Filter;
@@ -48,7 +45,7 @@ function SalesByCountry(props: Props): JSX.Element {
           </Icon>
         </MDBox>
         <MDTypography variant="h6" sx={{ ml: 2 }}>
-          Sales by Country
+          Insurance Reimbursments & Patient Payments By State
         </MDTypography>
       </MDBox>
       <MDBox p={2}>
@@ -56,11 +53,11 @@ function SalesByCountry(props: Props): JSX.Element {
           <Grid item xs={12} md={7} lg={6}>
             <ExecuteQuery
               dataSource={DM.DataSource}
-              dimensions={[DM.Commerce.Country]}
+              dimensions={[DM.Healthsense.State]}
               measures={[
-                measures.count(DM.Commerce.Transaction_ID, "Total Quantity"),
-                measures.sum(DM.Commerce.Revenue, "Total Revenue"),
-                measures.sum(DM.Commerce.Cost, "Total Cost"),
+                measures.countDistinct(DM.Healthsense.VisitID, "Total Quantity"),
+                measures.sum(DM.Healthsense.InsuranceReimbursedAmount, "Total Revenue"),
+                measures.sum(DM.Healthsense.PatientPaymentAmount, "Total Cost"),
               ]}
               filters={[props.filters]}
             >
@@ -73,20 +70,20 @@ function SalesByCountry(props: Props): JSX.Element {
           </Grid>
           <Grid item xs={12} md={5} lg={6}>
             <VectorMap
-              map={worldMerc}
+              map={usMerc}
               zoomOnScroll={false}
               zoomButtons={false}
               markersSelectable
               backgroundColor="transparent"
-              containerStyle={{ height: "300px" }}
+              containerStyle={{ height: "500px" }}
               containerClassName="map"
               selectedMarkers={["1", "3"]}
+              focusOn="" // Set the focusOn property to "US"
               markers={[
-                { name: "USA", latLng: [40.71296415909766, -74.00437720027804] },
-                { name: "Germany", latLng: [51.17661451970939, 10.97947735117339] },
-                { name: "Brazil", latLng: [-7.596735421549542, -54.781694323779185] },
-                { name: "Russia", latLng: [62.318222797104276, 89.81564777631716] },
-                { name: "China", latLng: [22.320178999475512, 114.17161225541399] },
+                { name: "California", latLng: [36.7783, -119.4179] },
+                { name: "Arizona", latLng: [34.0489, -111.0937] },
+                { name: "Colorado", latLng: [39.5501, -105.7821] },
+                { name: "Texas", latLng: [31.9686, -99.9018] },
               ]}
               regionStyle={{
                 initial: {
@@ -130,10 +127,10 @@ function SalesByCountry(props: Props): JSX.Element {
 }
 
 interface TableRow {
-  country: [string, string];
-  sales: number;
-  value: string;
-  cost: string;
+  State: [string, string];
+  Claims: number;
+  Reimbursed: string;
+  Payment: string;
 }
 
 function TranslateSisenseDataToTable(
@@ -142,10 +139,10 @@ function TranslateSisenseDataToTable(
   const salesTable: { [key: string]: string | number | (string | number)[] }[] = [];
   data.rows.forEach((row: any) => {
     const countryMappings: Record<string, [string, string]> = {
-      Brazil: [BR, "brazil"],
-      Germany: [DE, "germany"],
-      "United Kingdom": [GB, "great britain"],
-      "United States": [US, "united states"],
+      California: [US, "California"],
+      Colorado: [US, "Colorado"],
+      Texas: [US, "Texas"],
+      Arizona: [US, "Arizona"],
     };
 
     const countryName = row[0].text;
@@ -153,10 +150,10 @@ function TranslateSisenseDataToTable(
 
     if (countryWithFlag) {
       const tableRow: { [key: string]: string | number | (string | number)[] } = {
-        country: countryWithFlag,
-        sales: Math.floor(row[1].data),
-        value: `$${row[2].data.toLocaleString("en-US", { maximumFractionDigits: 2 })}`,
-        cost: `$${row[3].data.toLocaleString("en-US", { maximumFractionDigits: 2 })}`,
+        State: countryWithFlag,
+        Claims: Math.floor(row[1].data),
+        Reimbursed: `$${row[2].data.toLocaleString("en-US", { maximumFractionDigits: 2 })}`,
+        Payments: `$${row[3].data.toLocaleString("en-US", { maximumFractionDigits: 2 })}`,
       };
       salesTable.push(tableRow);
     } else {

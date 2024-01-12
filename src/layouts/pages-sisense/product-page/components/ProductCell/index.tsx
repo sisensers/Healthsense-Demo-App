@@ -74,7 +74,7 @@ function ProductCell({ image, name }: Props): JSX.Element {
             <ProductCell image={image} name={name} />
           </MDBox>
           <MDBox mb={1}>
-            <DayOfWeek />
+            <DayOfWeek filters={undefined} />
           </MDBox>
         </MDBox>
       </Popover>

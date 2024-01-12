@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { ExecuteQuery } from "@sisense/sdk-ui";
-import * as DM from "sisense/Schemas/ecommerce-master";
-import { Data, measures, Filter, Cell } from "@sisense/sdk-data";
+import * as DM from "sisense/Schemas/healthsense-master";
+import { Data, measures, Filter, Cell, filters } from "@sisense/sdk-data";
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
@@ -24,14 +24,6 @@ function OrderStatisticsCard({ color, title, icon, percentage, filters }: Props)
   const [count, setCount] = useState<number>(0);
 
   useEffect(() => {}, []);
-
-  const formatNumber = (value: number): string => {
-    const suffixes = ["", "K", "M", "B", "T"];
-    const order = Math.floor(Math.log10(value) / 3);
-    const suffix = suffixes[order];
-    const shortValue = value / Math.pow(10, order * 3);
-    return shortValue.toFixed(2) + suffix;
-  };
 
   return (
     <Card>
@@ -60,15 +52,21 @@ function OrderStatisticsCard({ color, title, icon, percentage, filters }: Props)
           <ExecuteQuery
             dataSource={DM.DataSource}
             dimensions={[]}
-            measures={[measures.sum(DM.Commerce.Quantity, "Total")]}
+            measures={[measures.sum(DM.Healthsense.PatientPaymentAmount, "Total")]}
             filters={[filters]}
           >
             {(data: Data) => {
-              const dynamicCount = data.rows.length > 0 ? (data.rows[0][0] as Cell).data : 0;
+              const dynamicCount = data.rows.length > 0 ? (data.rows[0][0] as Cell).data : "0";
+              const formattedCount = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+                notation: "compact",
+                compactDisplay: "short",
+              }).format(Number(dynamicCount));
 
               setCount(Number(dynamicCount));
 
-              return <MDTypography variant="h4">{formatNumber(dynamicCount)}</MDTypography>;
+              return <MDTypography variant="h4">{formattedCount}</MDTypography>;
             }}
           </ExecuteQuery>
         </MDBox>
@@ -94,7 +92,7 @@ OrderStatisticsCard.defaultProps = {
   color: "info",
   percentage: {
     color: "success",
-    label: "Growth Rate 7%",
+    label: "Growth Rate 5%",
   },
 };
 
