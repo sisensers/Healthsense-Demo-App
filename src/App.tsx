@@ -50,8 +50,8 @@ import routes from "routes";
 import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
 // Images
-import brandWhite from "assets/images/Shopsense-Logo-White.png";
-import brandDark from "assets/images/ShopsenseLogo-Black.png";
+import brandWhite from "assets/images/Healthsense-Logo-White.png";
+import brandDark from "assets/images/Healthsense-Logo-Dark.png";
 
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
