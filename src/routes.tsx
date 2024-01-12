@@ -117,13 +117,13 @@ const routes = [
     icon: <Icon fontSize="medium">dashboard</Icon>,
     collapse: [
       {
-        name: "Analytics",
+        name: "Payment Analysis",
         key: "analytics",
         route: "/dashboards/analytics",
         component: <Analytics />,
       },
       {
-        name: "Sales",
+        name: "Patient Care",
         key: "sales",
         route: "/dashboards/sales",
         component: <Sales />,

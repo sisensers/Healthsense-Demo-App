@@ -94,7 +94,7 @@ function Analytics(): JSX.Element {
             <Grid item xs={12} md={6} lg={3}>
               <MDBox mb={1.5}>
                 <CustomerStatisticsCard
-                  title={"Total Claims Processed"}
+                  title={"Claims Processed"}
                   icon={"leaderboard"}
                   filters={dateRangeFilter}
                 />
@@ -103,7 +103,7 @@ function Analytics(): JSX.Element {
             <Grid item xs={12} md={6} lg={3}>
               <MDBox mb={1.5}>
                 <RevenueStatisticsCard
-                  title={"Total Claims Reimbursed"}
+                  title={"Claims Reimbursed"}
                   icon={"store"}
                   filters={dateRangeFilter}
                 />
@@ -112,7 +112,7 @@ function Analytics(): JSX.Element {
             <Grid item xs={12} md={6} lg={3}>
               <MDBox mb={1.5}>
                 <CostStatisticsCard
-                  title={"Total Claims Outstanding"}
+                  title={"Claims Outstanding"}
                   icon={"warning"}
                   filters={dateRangeFilter}
                 />
@@ -139,46 +139,6 @@ function Analytics(): JSX.Element {
             <Grid item xs={12} md={6} lg={8}>
               <MDBox mb={3}>
                 <SalesByAgeLine filters={dateRangeFilter} />
-              </MDBox>
-            </Grid>
-          </Grid>
-        </MDBox>
-        <MDBox mt={2}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={4}>
-              <MDBox mt={3}>
-                <BookingCard
-                  image={booking1}
-                  title="Adidas Superstars!"
-                  description="Adidas Superstar shoes effortlessly marry elegance with comfort, boasting a timeless design that effortlessly elevates any look, while their cushioned insoles and supportive structure make each step a luxurious and comfortable experience. Whether you are strolling down the street or making a fashion statement, these iconic sneakers provide a perfect blend of style and coziness."
-                  price="$99/Pair"
-                  location="Barcelona, Spain"
-                  action={actionButtons}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <MDBox mt={3}>
-                <BookingCard
-                  image={booking2}
-                  title="Columbia Running"
-                  description="Columbia running shoes redefine the essence of comfort and versatility, enveloping each step with a harmonious blend of cushioned support that caters to the unique demands of both the track and daily activities, and their adaptable design seamlessly fuses performance with style, making them not just athletic essentials but also a statement of enduring comfort in any dynamic lifestyle."
-                  price="$79/Pair"
-                  location="London, UK"
-                  action={actionButtons}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <MDBox mt={3}>
-                <BookingCard
-                  image={booking3}
-                  title="Versace"
-                  description="Versace shoes redefine the pinnacle of opulence and comfort, as sumptuous cushioning wraps each step in a cocoon of luxury that transcends mere functionality, and their versatile designs seamlessly transition from upscale events to everyday settings, ensuring an enduring symbol of lavish comfort that becomes an integral part of one's distinctive lifestyle, where every stride is a statement of sophistication and ease."
-                  price="$129/Pair"
-                  location="Milan, Italy"
-                  action={actionButtons}
-                />
               </MDBox>
             </Grid>
           </Grid>
