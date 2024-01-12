@@ -119,13 +119,13 @@ const routes = [
       {
         name: "Payment Analysis",
         key: "analytics",
-        route: "/dashboards/analytics",
+        route: "/dashboards/payment",
         component: <Analytics />,
       },
       {
         name: "Patient Care",
         key: "sales",
-        route: "/dashboards/sales",
+        route: "/dashboards/care",
         component: <Sales />,
       },
       {
