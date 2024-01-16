@@ -35,6 +35,7 @@ import SisenseOrderList from "layouts/pages-sisense/order-list";
 import SisenseProductPage from "layouts/pages-sisense/product-page";
 import SisenseMicroAnalyticsPage from "layouts/pages-sisense/micro-analytics";
 import Practice from "layouts/dashboards/practice";
+import DeveloperExample from "layouts/dashboards/developer";
 
 // Material Dashboard 2 PRO React TS components
 import MDAvatar from "components/MDAvatar";
@@ -102,6 +103,12 @@ const routes = [
         key: "Practice",
         route: "/dashboards/practice",
         component: <Practice />,
+      },
+      {
+        name: "Developer Examples",
+        key: "Example",
+        route: "/dashboards/examples",
+        component: <DeveloperExample />,
       },
     ],
   },

@@ -26,6 +26,10 @@ const pageRoutes = [
             name: "Practice Managment",
             route: "/dashboards/practice",
           },
+          {
+            name: "Developer Examples",
+            route: "/dashboards/examples",
+          },
         ],
       },
       {

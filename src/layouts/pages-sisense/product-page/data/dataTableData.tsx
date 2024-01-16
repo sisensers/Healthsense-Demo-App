@@ -48,7 +48,7 @@ const dataTableData = {
           </>
         </>
       ),
-      wait: <DefaultCell>100 Minutes</DefaultCell>,
+      wait: <DefaultCell>103 Minutes</DefaultCell>,
       review: (
         <span>
           <ReviewCell rating={2.5} />
@@ -61,7 +61,7 @@ const dataTableData = {
       ),
       id: (
         <>
-          <DefaultCell>230019</DefaultCell>
+          <DefaultCell>1005</DefaultCell>
         </>
       ),
     },
@@ -78,14 +78,14 @@ const dataTableData = {
           </>
         </>
       ),
-      wait: <DefaultCell>45 Minutes</DefaultCell>,
+      wait: <DefaultCell>52 Minutes</DefaultCell>,
       review: <BetterAssistanceReview rating={5} />,
       availability: (
         <MDBox width="8rem">
           <MDProgress variant="gradient" value={90} color="success" />
         </MDBox>
       ),
-      id: <DefaultCell>87120</DefaultCell>,
+      id: <DefaultCell>1010</DefaultCell>,
     },
     {
       Practice: (
@@ -100,14 +100,14 @@ const dataTableData = {
           </>
         </>
       ),
-      wait: <DefaultCell>71 Minutes</DefaultCell>,
+      wait: <DefaultCell>53 Minutes</DefaultCell>,
       review: <HappyHealthReview rating={3.5} />,
       availability: (
         <MDBox width="8rem">
           <MDProgress variant="gradient" value={60} color="warning" />
         </MDBox>
       ),
-      id: <DefaultCell>412301</DefaultCell>,
+      id: <DefaultCell>1009</DefaultCell>,
     },
     {
       Practice: (
@@ -122,14 +122,14 @@ const dataTableData = {
           </>
         </>
       ),
-      wait: <DefaultCell>$59.99</DefaultCell>,
+      wait: <DefaultCell>105 Minutes</DefaultCell>,
       review: <ReviewCell rating={4.5} />,
       availability: (
         <MDBox width="8rem">
           <MDProgress variant="gradient" value={40} color="warning" />
         </MDBox>
       ),
-      id: <DefaultCell>001992</DefaultCell>,
+      id: <DefaultCell>1007</DefaultCell>,
     },
     {
       Practice: (
@@ -144,14 +144,14 @@ const dataTableData = {
           </>
         </>
       ),
-      wait: <DefaultCell>$59.99</DefaultCell>,
+      wait: <DefaultCell>103 Minutes</DefaultCell>,
       review: <ReviewCell rating={4.5} />,
       availability: (
         <MDBox width="8rem">
           <MDProgress variant="gradient" value={40} color="warning" />
         </MDBox>
       ),
-      id: <DefaultCell>001992</DefaultCell>,
+      id: <DefaultCell>1006</DefaultCell>,
     },
     {
       Practice: (
@@ -166,14 +166,14 @@ const dataTableData = {
           </>
         </>
       ),
-      wait: <DefaultCell>$59.99</DefaultCell>,
+      wait: <DefaultCell>105 Minutes</DefaultCell>,
       review: <ReviewCell rating={4.5} />,
       availability: (
         <MDBox width="8rem">
           <MDProgress variant="gradient" value={40} color="warning" />
         </MDBox>
       ),
-      id: <DefaultCell>001992</DefaultCell>,
+      id: <DefaultCell>1008</DefaultCell>,
     },
   ],
 };
