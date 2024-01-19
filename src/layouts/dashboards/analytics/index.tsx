@@ -31,7 +31,7 @@ import booking3 from "assets/images/products/VersaceMedusaHeadHighTopSneakers.pn
 
 import DayOfWeek from "sisense/Charts/DayOfWeek";
 import SalesByAgeLine from "sisense/Charts/SalesByAgeLine";
-import { DateRangeFilterTile } from "@sisense/sdk-ui";
+import { DateRangeFilterTile, ThemeProvider } from "@sisense/sdk-ui";
 import { Data, filters, measures } from "@sisense/sdk-data";
 import * as DM from "sisense/Schemas/healthsense-master";
 import { useState } from "react";
@@ -45,6 +45,21 @@ function Analytics(): JSX.Element {
     filters.dateRange(DM.Healthsense.VisitDate.Days)
   );
 
+  const theme = {
+    chart: {
+      textColor: "black",
+    },
+    general: {
+      brandColor: "#2196f3",
+      primaryButtonTextColor: "black",
+    },
+    palette: {
+      variantColors: ["#2196f3", "#0d47a1", "#050A30", "#7EC8E3"],
+    },
+    typography: {
+      fontFamily: "roboto",
+    },
+  };
   // Action buttons for the BookingCard
   const actionButtons = (
     <>
@@ -72,63 +87,65 @@ function Analytics(): JSX.Element {
       <Grid container spacing={5}>
         <Grid item xs={12} md={6}>
           <div>
-            <DateRangeFilterTile
-              title="Date Range"
-              dataSource={DM.DataSource}
-              attribute={DM.Healthsense.VisitDate.Days}
-              filter={dateRangeFilter}
-              onChange={(filter) => {
-                setDateRangeFilter(filter);
-              }}
-            />
+            <ThemeProvider theme={theme}>
+              <DateRangeFilterTile
+                title="Date Range"
+                dataSource={DM.DataSource}
+                attribute={DM.Healthsense.VisitDate.Days}
+                filter={dateRangeFilter}
+                onChange={(filter) => {
+                  setDateRangeFilter(filter);
+                }}
+              />
+            </ThemeProvider>
           </div>
         </Grid>
         <Grid item xs={12} md={6}></Grid>
       </Grid>
+      <MDBox mt={3}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6} lg={3}>
+            <MDBox mb={1.5}>
+              <CustomerStatisticsCard
+                title={"Claims Processed"}
+                icon={"leaderboard"}
+                filters={dateRangeFilter}
+              />
+            </MDBox>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <MDBox mb={1.5}>
+              <RevenueStatisticsCard
+                title={"Claims Reimbursed"}
+                icon={"store"}
+                filters={dateRangeFilter}
+              />
+            </MDBox>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <MDBox mb={1.5}>
+              <CostStatisticsCard
+                title={"Claims Outstanding"}
+                icon={"warning"}
+                filters={dateRangeFilter}
+              />
+            </MDBox>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <MDBox mb={1.5}>
+              <OrderStatisticsCard
+                title={"Patient Payments"}
+                filters={dateRangeFilter}
+                icon={"timeline"}
+              />
+            </MDBox>
+          </Grid>
+        </Grid>
+      </MDBox>
       <MDBox py={3}>
         <Grid container>
           <SalesByCountry filters={dateRangeFilter} />
         </Grid>
-        <MDBox mt={3}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <CustomerStatisticsCard
-                  title={"Claims Processed"}
-                  icon={"leaderboard"}
-                  filters={dateRangeFilter}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <RevenueStatisticsCard
-                  title={"Claims Reimbursed"}
-                  icon={"store"}
-                  filters={dateRangeFilter}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <CostStatisticsCard
-                  title={"Claims Outstanding"}
-                  icon={"warning"}
-                  filters={dateRangeFilter}
-                />
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={3}>
-              <MDBox mb={1.5}>
-                <OrderStatisticsCard
-                  title={"Patient Payments"}
-                  filters={dateRangeFilter}
-                  icon={"timeline"}
-                />
-              </MDBox>
-            </Grid>
-          </Grid>
-        </MDBox>
         <MDBox mt={6}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={4}>
