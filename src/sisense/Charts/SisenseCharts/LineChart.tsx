@@ -6,6 +6,7 @@ import CodeHighlight from "../../../components/CodeHighlight";
 import CodeBlock from "../../../components/CodeBlock";
 import { Data, Filter, filters, measures } from "@sisense/sdk-data";
 import * as DM from "sisense/Schemas/healthsense-master";
+import { Card } from "@mui/material";
 
 type Props = {
   filters: Filter;
@@ -24,25 +25,27 @@ export default function ExecuteQueryChart(props: Props) {
         </header>
 
         {view === "Preview" && (
-          <ExecuteQuery
-            dataSource={DM.DataSource}
-            dimensions={[DM.Healthsense.VisitDate.Years]}
-            measures={[measures.count(DM.Healthsense.PatientID, "Number of Patients")]}
-            filters={[]}
-          >
-            {(data: Data) => {
-              return (
-                <LineChart
-                  dataSet={data}
-                  dataOptions={{
-                    category: [{ name: "Years", type: "datetime" }],
-                    value: [{ name: "Number of Patients" }],
-                    breakBy: [],
-                  }}
-                />
-              );
-            }}
-          </ExecuteQuery>
+          <Card>
+            <ExecuteQuery
+              dataSource={DM.DataSource}
+              dimensions={[DM.Healthsense.VisitDate.Years]}
+              measures={[measures.count(DM.Healthsense.PatientID, "Number of Patients")]}
+              filters={[]}
+            >
+              {(data: Data) => {
+                return (
+                  <LineChart
+                    dataSet={data}
+                    dataOptions={{
+                      category: [{ name: "Years", type: "datetime" }],
+                      value: [{ name: "Number of Patients" }],
+                      breakBy: [],
+                    }}
+                  />
+                );
+              }}
+            </ExecuteQuery>
+          </Card>
         )}
 
         {view === "React" && (

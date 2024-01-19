@@ -13,9 +13,8 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
 import dataTableData from "layouts/pages-sisense/product-page/data/dataTableData";
-
+import BasicInfo from "./BasicInfo";
 // Sisense Components
-import TitlebarImageList from "components/imagelist";
 
 function Practice(): JSX.Element {
   return (
@@ -25,7 +24,7 @@ function Practice(): JSX.Element {
         <Card sx={{ overflow: "visible" }}>
           <MDBox p={3}>
             <MDBox mb={3}>
-              <TitlebarImageList />
+              <BasicInfo />
             </MDBox>
             <MDBox mt={4} mb={2}>
               <MDBox mb={1} ml={2}>

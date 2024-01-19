@@ -158,7 +158,7 @@ const SisenseDashboard: React.FC<SisenseDashboardProps> = ({
         id="sisense-iframe"
         ref={iframeRef}
         style={{
-          height: "800px", // Adjust the initial height as needed
+          height: "900px", // Adjust the initial height as needed
           border: "none",
           width: "100%",
           borderRadius: "10px",

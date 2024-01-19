@@ -38,12 +38,9 @@ import BarChart from "../../../sisense/Charts/SisenseCharts/BarChart";
 import LineChart from "../../../sisense/Charts/SisenseCharts/LineChart";
 import PieChart from "../../../sisense/Charts/SisenseCharts/PieChart";
 import ChartJS from "../../../sisense/Charts/SisenseCharts/ChartJs";
-
-//Nivo
-import NivoLine from "../../../sisense/Charts/NivoCharts/NivoLineExample";
-import NivoBump from "../../../sisense/Charts/NivoCharts/NivoBumpExample";
-import NivoHeapMap from "../../../sisense/Charts/NivoCharts/NivoHeapMapExample";
-import NivoRadialBar from "../../../sisense/Charts/NivoCharts/NivoRadialBarExample";
+import DateFilter from "../../../sisense/Charts/SisenseCharts/DateRangeFilter";
+import AgeRange from "../../../sisense/Charts/SisenseCharts/MemberFilterTile";
+import CodeSandboxLink from "./CodeSandbox";
 
 const theme = {
   chart: {
@@ -71,23 +68,7 @@ function DeveloperExample(): JSX.Element {
       <DashboardNavbar />
       <MDBox my={3}>
         <MDBox mb={3}>
-          <MDTypography variant="h5">Filters</MDTypography>
-          <MDTypography variant="button" color="text">
-            Sisense Filters that easily interact with all visualizations on page.
-          </MDTypography>
-        </MDBox>
-        <MDBox mb={6}>
-          <div style={{ marginBottom: "10px" }}>
-            <DateRangeFilterTile
-              title="Date Range"
-              dataSource={DM.DataSource}
-              attribute={DM.Healthsense.VisitDate.Days}
-              filter={dateRangeFilter}
-              onChange={(filter) => {
-                setDateRangeFilter(filter);
-              }}
-            />
-          </div>
+          <CodeSandboxLink />
         </MDBox>
         <MDBox mb={6}>
           <div style={{ top: "10px" }}>
@@ -111,11 +92,6 @@ function DeveloperExample(): JSX.Element {
         </MDBox>
         <MDBox mb={6}>
           <div style={{ marginBottom: "10px" }}>
-            <ThemeProvider theme={theme}>
-              <PieChart filters={dateRangeFilter} />
-            </ThemeProvider>
-          </div>
-          <div style={{ marginBottom: "10px" }}>
             <MDBox mb={3}>
               <MDTypography variant="h5">Custom Chart Component</MDTypography>
               <MDTypography variant="button" color="text">
@@ -124,6 +100,27 @@ function DeveloperExample(): JSX.Element {
               </MDTypography>
             </MDBox>
             <ChartJS filters={dateRangeFilter} />
+          </div>
+        </MDBox>
+        <MDBox mb={6}>
+          <div style={{ marginBottom: "10px" }}>
+            <MDBox mb={3}>
+              <MDTypography variant="h5">Filter Components</MDTypography>
+              <MDTypography variant="button" color="text">
+                The Date Range & age Range Filter components enables users to leverage Sisense
+                Filter UI components that can empower users to filter data in viusalizations. Select
+                and apply date range or age range filters for health-related visit dates in the
+                associated dataset.
+              </MDTypography>
+            </MDBox>
+            <ThemeProvider theme={theme}>
+              <DateFilter filters={undefined} />
+            </ThemeProvider>
+          </div>
+          <div style={{ marginBottom: "10px" }}>
+            <ThemeProvider theme={theme}>
+              <AgeRange filters={undefined} />
+            </ThemeProvider>
           </div>
         </MDBox>
       </MDBox>

@@ -9,14 +9,14 @@ import MDTypography from "components/MDTypography";
 // Settings page components
 import FormField from "layouts/pages/account/components/FormField";
 
-// Data
-import selectData from "layouts/pages/account/settings/components/BasicInfo/data/selectData";
+//Data
+import selectData from "./Data/selectData";
 
 function BasicInfo(): JSX.Element {
   return (
-    <Card id="basic-info" sx={{ overflow: "visible" }}>
+    <Card id="Patient Information" sx={{ overflow: "visible" }}>
       <MDBox p={3}>
-        <MDTypography variant="h5">Basic Info</MDTypography>
+        <MDTypography variant="h5">Patient Information</MDTypography>
       </MDBox>
       <MDBox component="form" pb={3} px={3}>
         <Grid container spacing={3}>
@@ -83,13 +83,13 @@ function BasicInfo(): JSX.Element {
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField
-              label="confirmation email"
-              placeholder="example@email.com"
-              inputProps={{ type: "email" }}
+              label="Insurance Provider"
+              placeholder="Provider Name"
+              inputProps={{ type: "string" }}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <FormField label="your location" placeholder="Sydney, A" />
+            <FormField label="Poilcy #" placeholder="123456789" />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField
@@ -99,13 +99,21 @@ function BasicInfo(): JSX.Element {
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <FormField label="Language" placeholder="English" />
+            <FormField label="Reason for Visit" placeholder="Description" />
           </Grid>
           <Grid item xs={12} md={6}>
             <Autocomplete
               multiple
-              defaultValue={["react", "angular"]}
+              defaultValue={["Scheduled Appointment"]}
               options={selectData.skills}
+              renderInput={(params) => <FormField {...params} InputLabelProps={{ shrink: true }} />}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Autocomplete
+              multiple
+              defaultValue={["Cave Creek"]}
+              options={selectData.Practice}
               renderInput={(params) => <FormField {...params} InputLabelProps={{ shrink: true }} />}
             />
           </Grid>
