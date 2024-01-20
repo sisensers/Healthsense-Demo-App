@@ -41,27 +41,28 @@ const dataTableData = {
       accessor: "status",
       Cell: ({ value }: any) => {
         let status;
+
         if (value === "paid") {
-          status = <StatusCell icon="done" color="success" status="Paid" />;
+          status = <StatusCell icon="done" color="success" status="Unpaid" />;
         } else if (value === "refunded") {
-          status = <StatusCell icon="replay" color="dark" status="Refunded" />;
+          status = <StatusCell icon="replay" color="dark" status="Unpaid" />;
         } else {
-          status = <StatusCell icon="close" color="error" status="Canceled" />;
+          status = <StatusCell icon="close" color="error" status="Unpaid" />;
         }
 
         return status;
       },
     },
     {
-      Header: "customer",
-      accessor: "customer",
+      Header: "patient",
+      accessor: "patient",
       Cell: ({ value: [name, data] }: any) => (
         <CustomerCell image={data.image} color={data.color || "dark"} name={name} />
       ),
     },
     {
-      Header: "product",
-      accessor: "product",
+      Header: "description",
+      accessor: "description",
       Cell: ({ value }: any) => {
         const [name, data] = value;
 
@@ -74,8 +75,8 @@ const dataTableData = {
       },
     },
     {
-      Header: "revenue",
-      accessor: "revenue",
+      Header: "amount",
+      accessor: "amount",
       Cell: ({ value }: any) => <DefaultCell value={value} />,
     },
   ],
@@ -85,97 +86,97 @@ const dataTableData = {
       id: "#10421",
       date: "1 Nov, 10:20 AM",
       status: "paid",
-      customer: ["Orlando Imieto", { image: team2 }],
-      product: "Nike Sport V2",
-      revenue: "$140,20",
+      patient: ["Orlando Imieto", { image: team2 }],
+      description: "Nike Sport V2",
+      amount: "$140,20",
     },
     {
       id: "#10422",
       date: "1 Nov, 10:53 AM",
       status: "paid",
-      customer: ["Alice Murinho", { image: team1 }],
-      product: "Valvet T-shirt",
-      revenue: "$42,00",
+      patient: ["Alice Murinho", { image: team1 }],
+      description: "Valvet T-shirt",
+      amount: "$42,00",
     },
     {
       id: "#10423",
       date: "1 Nov, 11:13 AM",
       status: "refunded",
-      customer: ["Michael Mirra", { image: "M" }],
-      product: ["Leather Wallet", { suffix: "+1 more" }],
-      revenue: "$25,50",
+      patient: ["Michael Mirra", { image: "M" }],
+      description: ["Leather Wallet", { suffix: "+1 more" }],
+      amount: "$25,50",
     },
     {
       id: "#10424",
       date: "1 Nov, 12:20 PM",
       status: "paid",
-      customer: ["Andrew Nichel", { image: team3 }],
-      product: "Bracelet Onu-Lino",
-      revenue: "$19,40",
+      patient: ["Andrew Nichel", { image: team3 }],
+      description: "Bracelet Onu-Lino",
+      amount: "$19,40",
     },
     {
       id: "#10425",
       date: "1 Nov, 1:40 PM",
       status: "canceled",
-      customer: ["Sebastian Koga", { image: team4 }],
-      product: ["Phone Case Pink", { suffix: "x 2" }],
-      revenue: "$44,90",
+      patient: ["Sebastian Koga", { image: team4 }],
+      description: ["Phone Case Pink", { suffix: "x 2" }],
+      amount: "$44,90",
     },
     {
       id: "#10426",
       date: "1 Nov, 2:19 PM",
       status: "paid",
-      customer: ["Laur Gilbert", { image: "L" }],
-      product: "Backpack Niver",
-      revenue: "$112,50",
+      patient: ["Laur Gilbert", { image: "L" }],
+      description: "Backpack Niver",
+      amount: "$112,50",
     },
     {
       id: "#10427",
       date: "1 Nov, 3:42 AM",
       status: "paid",
-      customer: ["Iryna Innda", { image: "I" }],
-      product: "Adidas Vio",
-      revenue: "$200,00",
+      patient: ["Iryna Innda", { image: "I" }],
+      description: "Adidas Vio",
+      amount: "$200,00",
     },
     {
       id: "#10428",
       date: "2 Nov, 9:32 AM",
       status: "paid",
-      customer: ["Arrias Liunda", { image: "A" }],
-      product: "Airpods 2 Gen",
-      revenue: "$350,00",
+      patient: ["Arrias Liunda", { image: "A" }],
+      description: "Airpods 2 Gen",
+      amount: "$350,00",
     },
     {
       id: "#10429",
       date: "2 Nov, 10:14 AM",
       status: "paid",
-      customer: ["Rugna Ilpio", { image: team5 }],
-      product: "Bracelet Warret",
-      revenue: "$15,00",
+      patient: ["Rugna Ilpio", { image: team5 }],
+      description: "Bracelet Warret",
+      amount: "$15,00",
     },
     {
       id: "#10430",
       date: "2 Nov, 10:14 AM",
       status: "refunded",
-      customer: ["Anna Landa", { image: ivana }],
-      product: ["Watter Bottle India", { suffix: "x 3" }],
-      revenue: "$25,00",
+      patient: ["Anna Landa", { image: ivana }],
+      description: ["Watter Bottle India", { suffix: "x 3" }],
+      amount: "$25,00",
     },
     {
       id: "#10431",
       date: "2 Nov, 3:12 PM",
       status: "paid",
-      customer: ["Karl Innas", { image: "K" }],
-      product: "Kitchen Gadgets",
-      revenue: "$164,90",
+      patient: ["Karl Innas", { image: "K" }],
+      description: "Kitchen Gadgets",
+      amount: "$164,90",
     },
     {
       id: "#10432",
       date: "2 Nov, 5:12 PM",
       status: "paid",
-      customer: ["Oana Kilas", { image: "O", color: "info" }],
-      product: "Office Papers",
-      revenue: "$23,90",
+      patient: ["Oana Kilas", { image: "O", color: "info" }],
+      description: "Office Papers",
+      amount: "$23,90",
     },
   ],
 };

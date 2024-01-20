@@ -38,7 +38,7 @@ import dataTableData from "layouts/ecommerce/orders/order-list/data/dataTableDat
 
 // Sisense
 import { ExecuteQuery } from "@sisense/sdk-ui";
-import * as DM from "sisense/Schemas/ecommerce-master";
+import * as DM from "sisense/Schemas/healthsense-master";
 import { Data, measures, filters } from "@sisense/sdk-data";
 import TransitionsModal from "components/SisenseModal/TransitionModal";
 import OrderInsights from "./components/OrderInsights";
@@ -102,20 +102,16 @@ function SisenseOrderList(): JSX.Element {
           <ExecuteQuery
             dataSource={DM.DataSource}
             dimensions={[
-              DM.Commerce.Transaction_ID,
-              DM.Commerce.Transaction_Date.Days,
-              DM.Commerce.Status,
-              DM.Commerce.CustomerName,
-              DM.Product.ProductName,
+              DM.Healthsense.VisitID,
+              DM.Healthsense.VisitDate.Days,
+              DM.Healthsense.Description,
+              DM.Patient.PatientName,
+              DM.Healthsense.Description,
+              DM.Healthsense.InsuranceClaimAmount,
             ]}
-            measures={[measures.sum(DM.Commerce.Revenue, "Total Revenue")]}
+            measures={[measures.sum(DM.Healthsense.InsuranceClaimAmount, "Total Revenue")]}
             filters={[
-              filters.members(DM.Commerce.Country, [
-                "United States",
-                "Germany",
-                "United Kingdom",
-                "Brazil",
-              ]),
+              filters.members(DM.Healthsense.Reimbursed, ["no"]),
               //filters.members(DM.Commerce.CustomerName, ["Angela Perez"]),
             ]}
           >
@@ -142,14 +138,14 @@ interface TranslatedRow {
   id: string;
   date: string;
   status: string;
-  customer: (
+  patient: (
     | string
     | {
         image: any;
       }
   )[];
-  product: string;
-  revenue: string;
+  description: string;
+  amount: string;
 }
 
 function TranslateSisenseDataToTable(data: Data) {
@@ -161,9 +157,9 @@ function TranslateSisenseDataToTable(data: Data) {
       id: "#".concat(row[0].text),
       date: row[1].text,
       status: row[2].text.toLowerCase(),
-      customer: nameWithProfilePic,
-      product: row[4].text,
-      revenue: "$".concat(row[5].data.toLocaleString("en-US", { maximumFractionDigits: 2 })),
+      patient: nameWithProfilePic,
+      description: row[4].text,
+      amount: "$".concat(row[5].data.toLocaleString("en-US", { maximumFractionDigits: 2 })),
     };
     translatedRows.push(translatedRow);
   });
