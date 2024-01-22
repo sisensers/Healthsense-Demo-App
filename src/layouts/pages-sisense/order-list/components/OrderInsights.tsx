@@ -19,18 +19,7 @@ import CampaignPerformance from "sisense/Charts/CampaignPerformance";
 import Sentiment from "sisense/Charts/Sentiment";
 import Summary from "sisense/Charts/Summary";
 import Discuss from "sisense/Charts/Discuss";
-
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 650,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import OrderForm from "./OrderForm";
 
 export default function OrderInsights() {
   const [open, setOpen] = React.useState(false);
@@ -49,7 +38,7 @@ export default function OrderInsights() {
         aria-describedby={id}
         onClick={handleOpen}
       >
-        Order Insights
+        Process Claims
       </MDButton>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -64,27 +53,9 @@ export default function OrderInsights() {
           },
         }}
       >
-        <Fade in={open}>
-          <Box sx={style}>
-            <MDBox>
-              <MDBox mb={5}></MDBox>
-              <MDBox mb={5}>
-                {view === "Campaign" && <CampaignPerformance />}
-                {view === "Sales" && <DailySales />}
-                {view === "Sentiment" && <Sentiment />}
-                {view === "Discuss" && <Discuss />}
-                {view === "Summary" && <Summary />}
-              </MDBox>
-              <MDBox mb={5}>
-                <ButtonGroup
-                  selected={view}
-                  onChange={setView}
-                  labels={["Campaign", "Sales", "Sentiment", "Discuss", "Summary"]}
-                />
-              </MDBox>
-            </MDBox>
-          </Box>
-        </Fade>
+        <MDBox>
+          <OrderForm />
+        </MDBox>
       </Modal>
     </div>
   );

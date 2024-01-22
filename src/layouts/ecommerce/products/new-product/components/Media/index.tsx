@@ -23,11 +23,11 @@ import MDDropzone from "components/MDDropzone";
 function Media(): JSX.Element {
   return (
     <MDBox>
-      <MDTypography variant="h5">Media</MDTypography>
+      <MDTypography variant="h5">Claim Invoice</MDTypography>
       <MDBox mt={3}>
         <MDBox mb={1} ml={0.5} lineHeight={0} display="inline-block">
           <MDTypography component="label" variant="button" fontWeight="regular" color="text">
-            Product Image
+            Claim Image
           </MDTypography>
         </MDBox>
         {useMemo(

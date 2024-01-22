@@ -27,18 +27,18 @@ function Socials(): JSX.Element {
   return (
     <MDBox>
       <MDTypography variant="h5" fontWeight="bold">
-        Socials
+        Visit Information
       </MDTypography>
       <MDBox mt={2}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <FormField type="text" label="Shoppify Handle" />
+            <FormField type="text" label="Doctor Name" />
           </Grid>
           <Grid item xs={12}>
-            <FormField type="text" label="Facebook Account" />
+            <FormField type="text" label="Doctor ID" />
           </Grid>
           <Grid item xs={12}>
-            <FormField type="text" label="Instagram Account" />
+            <FormField type="text" label="Reason for Visit" />
           </Grid>
         </Grid>
       </MDBox>

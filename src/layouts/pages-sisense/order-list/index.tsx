@@ -75,9 +75,7 @@ function SisenseOrderList(): JSX.Element {
       <DashboardNavbar />
       <MDBox my={3}>
         <MDBox display="flex" justifyContent="space-between" alignItems="flex-start" mb={2}>
-          <MDButton variant="gradient" color="info">
-            <OrderInsights />
-          </MDButton>
+          <OrderInsights />
           <MDBox display="flex">
             <MDButton variant={menu ? "contained" : "outlined"} color="dark" onClick={openMenu}>
               filters&nbsp;

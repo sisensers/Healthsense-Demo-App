@@ -28,21 +28,29 @@ import FormField from "layouts/ecommerce/products/new-product/components/FormFie
 function Pricing(): JSX.Element {
   return (
     <MDBox>
-      <MDTypography variant="h5">Pricing</MDTypography>
+      <MDTypography variant="h5">Claim Submit</MDTypography>
       <MDBox mt={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={3}>
-            <FormField type="text" label="Price" placeholder="99.00" />
+            <FormField type="text" label="Date" placeholder="01/01/2024" />
           </Grid>
           <Grid item xs={12} sm={4} sx={{ mt: 2 }}>
             <Autocomplete
-              defaultValue="USD"
-              options={["BTC", "CNY", "EUR", "GBP", "INR", "USD"]}
+              defaultValue="Office"
+              options={[
+                "Better Health",
+                "Better Assistance",
+                "Cave Creek",
+                "Deer Mountain",
+                "Happy Health",
+                "First Care",
+                "Office",
+              ]}
               renderInput={(params) => <MDInput {...params} variant="standard" />}
             />
           </Grid>
           <Grid item xs={12} sm={5}>
-            <FormField type="text" label="SKU" placeholder="71283476591" />
+            <FormField type="text" label="Office ID" placeholder="71283476591" />
           </Grid>
         </Grid>
       </MDBox>
@@ -51,13 +59,13 @@ function Pricing(): JSX.Element {
           <Grid item xs={12}>
             <MDBox my={2} display="inline-block">
               <MDTypography component="label" variant="button" fontWeight="regular" color="text">
-                Tags
+                Status
               </MDTypography>
             </MDBox>
             <Autocomplete
               multiple
-              defaultValue={["In Stock", "Out of Stock"]}
-              options={["Black Friday", "Expired", "Out of Stock", "In Stock", "Sale"]}
+              defaultValue={["In Network"]}
+              options={["In Network", "Out of Network"]}
               renderInput={(params) => <MDInput {...params} variant="standard" />}
             />
           </Grid>
