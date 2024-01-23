@@ -17,8 +17,10 @@ Coded by www.creative-tim.com
 import kal from "assets/images/kal-visuals-square.jpg";
 import marie from "assets/images/marie.jpg";
 import ivana from "assets/images/ivana-square.jpg";
+import drake from "assets/images/drake.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
+import bruce from "assets/images/bruce-mars.jpg";
 
 // types
 type Types = any;
@@ -69,8 +71,19 @@ const profileListData: Types = [
     },
   },
   {
-    image: team3,
+    image: drake,
     name: "Nick Daniel",
+    description: "Hi! I need more information..",
+    action: {
+      type: "internal",
+      route: "/pages/profile/profile-overview",
+      color: "info",
+      label: "reply",
+    },
+  },
+  {
+    image: bruce,
+    name: "Bruce Mars",
     description: "Hi! I need more information..",
     action: {
       type: "internal",

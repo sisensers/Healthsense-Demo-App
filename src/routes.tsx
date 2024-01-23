@@ -120,6 +120,12 @@ const routes = [
         component: <SisenseOrderList />,
       },
       {
+        name: "Order Form",
+        key: "order-form",
+        route: "/adminsitration/order-form",
+        component: <EditProduct />,
+      },
+      {
         name: "Calendar",
         key: "calendar",
         route: "/adminsitration/calendar",

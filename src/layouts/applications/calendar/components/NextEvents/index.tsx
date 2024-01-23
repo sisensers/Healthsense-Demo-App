@@ -28,14 +28,14 @@ function NextEvents(): JSX.Element {
     <Card sx={{ height: "100%" }}>
       <MDBox pt={2} px={2}>
         <MDTypography variant="h6" fontWeight="medium">
-          Next events
+          Upcomming Events
         </MDTypography>
       </MDBox>
       <MDBox p={2}>
         <DefaultItem
           color="dark"
           icon="paid"
-          title="Cyber Week"
+          title="Healthcare Conference"
           description="27 March 2020, at 12:30 PM"
         />
         <MDBox mt={3.5}>
@@ -50,7 +50,7 @@ function NextEvents(): JSX.Element {
           <DefaultItem
             color="dark"
             icon="menu_book"
-            title="Book Deposit Hall"
+            title="Nurses Huddle"
             description="25 March 2021, at 9:30 AM"
           />
         </MDBox>
@@ -58,7 +58,7 @@ function NextEvents(): JSX.Element {
           <DefaultItem
             color="dark"
             icon="local_shipping"
-            title="Shipment Deal UK"
+            title="Inventory"
             description="25 March 2021, at 2:00 PM"
           />
         </MDBox>
@@ -66,7 +66,7 @@ function NextEvents(): JSX.Element {
           <DefaultItem
             color="dark"
             icon="palette"
-            title="Verify Dashboard Color Palette"
+            title="Update Schedule"
             description="26 March 2021, at 9:00 AM"
           />
         </MDBox>

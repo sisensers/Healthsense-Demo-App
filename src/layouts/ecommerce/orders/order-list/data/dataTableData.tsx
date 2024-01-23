@@ -30,7 +30,7 @@ import ivana from "assets/images/ivana-squares.jpg";
 
 const dataTableData = {
   columns: [
-    { Header: "id", accessor: "id", Cell: ({ value }: any) => <IdCell id={value} /> },
+    { Header: "score", accessor: "score", Cell: ({ value }: any) => <IdCell id={value} /> },
     {
       Header: "date",
       accessor: "date",
@@ -83,7 +83,7 @@ const dataTableData = {
 
   rows: [
     {
-      id: "#10421",
+      score: "#10421",
       date: "1 Nov, 10:20 AM",
       status: "paid",
       patient: ["Orlando Imieto", { image: team2 }],
@@ -91,7 +91,7 @@ const dataTableData = {
       amount: "$140,20",
     },
     {
-      id: "#10422",
+      score: "#10422",
       date: "1 Nov, 10:53 AM",
       status: "paid",
       patient: ["Alice Murinho", { image: team1 }],
@@ -99,7 +99,7 @@ const dataTableData = {
       amount: "$42,00",
     },
     {
-      id: "#10423",
+      score: "#10423",
       date: "1 Nov, 11:13 AM",
       status: "refunded",
       patient: ["Michael Mirra", { image: "M" }],
@@ -107,7 +107,7 @@ const dataTableData = {
       amount: "$25,50",
     },
     {
-      id: "#10424",
+      score: "#10424",
       date: "1 Nov, 12:20 PM",
       status: "paid",
       patient: ["Andrew Nichel", { image: team3 }],
@@ -115,7 +115,7 @@ const dataTableData = {
       amount: "$19,40",
     },
     {
-      id: "#10425",
+      score: "#10425",
       date: "1 Nov, 1:40 PM",
       status: "canceled",
       patient: ["Sebastian Koga", { image: team4 }],
@@ -123,7 +123,7 @@ const dataTableData = {
       amount: "$44,90",
     },
     {
-      id: "#10426",
+      score: "#10426",
       date: "1 Nov, 2:19 PM",
       status: "paid",
       patient: ["Laur Gilbert", { image: "L" }],
@@ -131,7 +131,7 @@ const dataTableData = {
       amount: "$112,50",
     },
     {
-      id: "#10427",
+      score: "#10427",
       date: "1 Nov, 3:42 AM",
       status: "paid",
       patient: ["Iryna Innda", { image: "I" }],
@@ -139,7 +139,7 @@ const dataTableData = {
       amount: "$200,00",
     },
     {
-      id: "#10428",
+      score: "#10428",
       date: "2 Nov, 9:32 AM",
       status: "paid",
       patient: ["Arrias Liunda", { image: "A" }],
@@ -147,7 +147,7 @@ const dataTableData = {
       amount: "$350,00",
     },
     {
-      id: "#10429",
+      score: "#10429",
       date: "2 Nov, 10:14 AM",
       status: "paid",
       patient: ["Rugna Ilpio", { image: team5 }],
@@ -155,7 +155,7 @@ const dataTableData = {
       amount: "$15,00",
     },
     {
-      id: "#10430",
+      score: "#10430",
       date: "2 Nov, 10:14 AM",
       status: "refunded",
       patient: ["Anna Landa", { image: ivana }],
@@ -163,7 +163,7 @@ const dataTableData = {
       amount: "$25,00",
     },
     {
-      id: "#10431",
+      score: "#10431",
       date: "2 Nov, 3:12 PM",
       status: "paid",
       patient: ["Karl Innas", { image: "K" }],
@@ -171,7 +171,7 @@ const dataTableData = {
       amount: "$164,90",
     },
     {
-      id: "#10432",
+      score: "#10432",
       date: "2 Nov, 5:12 PM",
       status: "paid",
       patient: ["Oana Kilas", { image: "O", color: "info" }],

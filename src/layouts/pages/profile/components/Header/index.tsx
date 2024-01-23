@@ -33,7 +33,8 @@ import breakpoints from "assets/theme/base/breakpoints";
 
 // Images
 import burceMars from "assets/images/bruce-mars.jpg";
-import backgroundImage from "assets/images/bg-profile.jpeg";
+import backgroundImage from "assets/images/bg-smart-home-2.jpg";
+import profilePicture from "assets/images/team-3.jpg";
 
 function Header({ children }: { children?: ReactNode }): JSX.Element {
   const [tabsOrientation, setTabsOrientation] = useState<"horizontal" | "vertical">("horizontal");
@@ -91,15 +92,15 @@ function Header({ children }: { children?: ReactNode }): JSX.Element {
       >
         <Grid container spacing={3} alignItems="center">
           <Grid item>
-            <MDAvatar src={burceMars} alt="profile-image" size="xl" shadow="sm" />
+            <MDAvatar src={profilePicture} alt="Brooklyn Alice" size="sm" />
           </Grid>
           <Grid item>
             <MDBox height="100%" mt={0.5} lineHeight={1}>
               <MDTypography variant="h5" fontWeight="medium">
-                Richard Davis
+                Brooklyn Alice
               </MDTypography>
               <MDTypography variant="button" color="text" fontWeight="regular">
-                CEO / Co-Founder
+                Administration
               </MDTypography>
             </MDBox>
           </Grid>

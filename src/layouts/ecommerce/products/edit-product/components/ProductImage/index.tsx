@@ -22,7 +22,7 @@ import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
 // Images
-import productImage from "assets/images/products/product-11.jpg";
+import productImage from "assets/images/medicine.png";
 
 function ProductImage(): JSX.Element {
   return (
@@ -73,11 +73,10 @@ function ProductImage(): JSX.Element {
           </MDButton>
         </MDBox>
         <MDTypography variant="h5" fontWeight="regular" sx={{ mt: 4 }}>
-          Product Image
+          Treatment
         </MDTypography>
         <MDTypography variant="body2" color="text" sx={{ mt: 1.5, mb: 1 }}>
-          The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to
-          &#8220;Naviglio&#8221; where you can enjoy the main night life in Barcelona.
+          Place order for new treatment or reorder previous order placed.
         </MDTypography>
       </MDBox>
     </Card>

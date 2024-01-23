@@ -100,7 +100,7 @@ function SisenseOrderList(): JSX.Element {
           <ExecuteQuery
             dataSource={DM.DataSource}
             dimensions={[
-              DM.Healthsense.VisitID,
+              DM.Patient.Age,
               DM.Healthsense.VisitDate.Days,
               DM.Healthsense.Description,
               DM.Patient.PatientName,
@@ -133,7 +133,7 @@ interface Row {
   [key: string]: any;
 }
 interface TranslatedRow {
-  id: string;
+  score: string;
   date: string;
   status: string;
   patient: (
@@ -152,7 +152,7 @@ function TranslateSisenseDataToTable(data: Data) {
     //Create image with first letter of name
     var nameWithProfilePic = [row[3].text, { image: row[3].text.charAt(0) }];
     const translatedRow: TranslatedRow = {
-      id: "#".concat(row[0].text),
+      score: "%".concat(row[0].text),
       date: row[1].text,
       status: row[2].text.toLowerCase(),
       patient: nameWithProfilePic,

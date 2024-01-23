@@ -33,24 +33,18 @@ function ProductInfo(): JSX.Element {
   return (
     <Card>
       <MDBox p={3}>
-        <MDTypography variant="h5">Product Information</MDTypography>
+        <MDTypography variant="h5">Order Information</MDTypography>
         <MDBox mt={1}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
-              <FormField type="text" label="Name" defaultValue="Minimal Bar Stool" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <FormField type="number" label="Weight" defaultValue={2} />
+              <FormField type="text" label="Medication Name" defaultValue="Doxycycline" />
             </Grid>
           </Grid>
         </MDBox>
         <MDBox mt={1}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={3}>
-              <FormField type="text" label="Collection" defaultValue="Summer" />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <FormField type="text" label="Price" defaultValue="$90" />
+              <FormField type="text" label="Cost" defaultValue="$90" />
             </Grid>
             <Grid item xs={12} sm={3}>
               <FormField type="number" label="Quantity" defaultValue={50} />
@@ -80,12 +74,12 @@ function ProductInfo(): JSX.Element {
                     color="text"
                     textTransform="capitalize"
                   >
-                    Category
+                    Treatment Type
                   </MDTypography>
                 </MDBox>
                 <Autocomplete
-                  defaultValue="Clothing"
-                  options={["Clothing", "Electronics", "Furniture", "Others", "Real Estate"]}
+                  defaultValue="Antibiotic"
+                  options={["Antibiotic", "Pain", "Vaccine", "Blood Pressure"]}
                   renderInput={(params) => <MDInput {...params} variant="standard" />}
                 />
               </MDBox>
@@ -97,12 +91,12 @@ function ProductInfo(): JSX.Element {
                   color="text"
                   textTransform="capitalize"
                 >
-                  Color
+                  Prescribing Doctor
                 </MDTypography>
               </MDBox>
               <Autocomplete
-                defaultValue="Black"
-                options={["Black", "Blue", "Green", "Orange", "White"]}
+                defaultValue="Amelia Monroe"
+                options={["Amelia Monroe", "Liam Harrison", "Olivia Parker", "Jackson Blake"]}
                 renderInput={(params) => <MDInput {...params} variant="standard" />}
               />
             </Grid>
