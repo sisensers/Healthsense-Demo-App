@@ -38,6 +38,7 @@ import { useState } from "react";
 import CustomerStatisticsCard from "examples/Cards/StatisticsCards/CustomerStatisticsCard";
 import CostStatisticsCard from "examples/Cards/StatisticsCards/CostStatisticsCard";
 import OrderStatisticsCard from "examples/Cards/StatisticsCards/OrdersStatisticsCard";
+import { Link } from "react-router-dom";
 
 function Analytics(): JSX.Element {
   const { sales, tasks } = reportsLineChartData;

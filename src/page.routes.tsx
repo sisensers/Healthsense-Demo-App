@@ -11,20 +11,16 @@ const pageRoutes = [
         icon: <Icon>dashboard</Icon>,
         collapse: [
           {
-            name: "Payment Analysis",
-            route: "/dashboards/paymentanalysis",
+            name: "Claims Analysis",
+            route: "/dashboards/claims-analysis",
           },
           {
             name: "Patient Care",
-            route: "/dashboards/patientcare",
+            route: "/dashboards/patient-care",
           },
           {
             name: "Self Service",
-            route: "/dashboards/selfservice",
-          },
-          {
-            name: "Practice Managment",
-            route: "/dashboards/practice",
+            route: "/dashboards/self-service",
           },
           {
             name: "Developer Examples",
@@ -33,12 +29,20 @@ const pageRoutes = [
         ],
       },
       {
-        name: "users",
+        name: "administration",
         icon: <Icon>people</Icon>,
         collapse: [
           {
-            name: "reports",
-            route: "/pages/users/reports",
+            name: "Patient Scheduling",
+            route: "/adminstration/patient-scheduling",
+          },
+          {
+            name: "Claims Processing",
+            route: "/adminstration/claims-processing",
+          },
+          {
+            name: "Calendar",
+            route: "/adminsitration/calendar",
           },
         ],
       },
@@ -171,45 +175,6 @@ const pageRoutes = [
         name: "calendar",
         route: "/applications/calendar",
         icon: "event",
-      },
-    ],
-  },
-  {
-    name: "ecommerce",
-    columns: 2,
-    rowsPerColumn: 1,
-    collapse: [
-      {
-        name: "orders",
-        icon: <Icon>shopping_cart</Icon>,
-        collapse: [
-          {
-            name: "order list",
-            route: "/ecommerce/orders/order-list",
-          },
-          {
-            name: "order details",
-            route: "/ecommerce/orders/order-details",
-          },
-        ],
-      },
-      {
-        name: "products",
-        icon: <Icon>memory</Icon>,
-        collapse: [
-          {
-            name: "new product",
-            route: "/ecommerce/products/new-product",
-          },
-          {
-            name: "edit product",
-            route: "/ecommerce/products/edit-product",
-          },
-          {
-            name: "product page",
-            route: "/ecommerce/products/product-page",
-          },
-        ],
       },
     ],
   },
