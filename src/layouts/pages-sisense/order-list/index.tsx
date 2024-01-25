@@ -109,7 +109,7 @@ function SisenseOrderList(): JSX.Element {
             ]}
             measures={[measures.sum(DM.Healthsense.InsuranceClaimAmount, "Total Revenue")]}
             filters={[
-              filters.members(DM.Healthsense.Reimbursed, ["no"]),
+              filters.dateFrom(DM.Healthsense.VisitDate.Days, "01/01/2024"),
               //filters.members(DM.Commerce.CustomerName, ["Angela Perez"]),
             ]}
           >
